@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router, Route, Link, Switch,
@@ -16,7 +16,7 @@ function App() {
         </Router>
       </div>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

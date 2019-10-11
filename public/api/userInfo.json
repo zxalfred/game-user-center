@@ -1,0 +1,45 @@
+{
+  "code": 200,
+  "message": "success",
+  "current_time": 1570781508,
+  "data": {
+    "account_id": 102486765,
+    "account_name": "Guest_1570624708cl262f",
+    "channel_id": 3,
+    "channel_icon": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=616021510,4172860601\u0026fm=26\u0026gp=0.jpg",
+    "channels": [
+      {
+        "channel_id": 1,
+        "channel_name": "gamecenter",
+        "channel_icon": "https://developer.apple.com/assets/elements/icons/game-center/game-center-128x128.png",
+        "bg_color": "#F4F4F4",
+        "user_name": "",
+        "is_bind": false
+      },
+      {
+        "channel_id": 2,
+        "channel_name": "googleplay",
+        "channel_icon": "https://ss1.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/pic/item/e1fe9925bc315c608aaa88638ab1cb134954777b.jpg",
+        "bg_color": "#F4F4F4",
+        "user_name": "",
+        "is_bind": false
+      },
+      {
+        "channel_id": 4,
+        "channel_name": "facebook",
+        "channel_icon": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=616021510,4172860601\u0026fm=26\u0026gp=0.jpg",
+        "bg_color": "#F4F4F4",
+        "user_name": "",
+        "is_bind": false
+      },
+      {
+        "channel_id": 5,
+        "channel_name": "yoyyou",
+        "channel_icon": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=616021510,4172860601\u0026fm=26\u0026gp=0.jpg",
+        "bg_color": "#F4F4F4",
+        "user_name": "",
+        "is_bind": false
+      }
+    ]
+  }
+}

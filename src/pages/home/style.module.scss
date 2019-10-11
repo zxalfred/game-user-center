@@ -1,0 +1,69 @@
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  .logoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .userInfo {
+      > div {
+        display: flex;
+        align-items: center;
+        color: #333;
+        font-size: 1.4rem;
+        > img {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .idSpan {
+        color: #888;
+        display: block;
+        margin-top: 6px;
+        text-align: right;
+      }
+    }
+    .logo > img {
+      width: 150px;
+      height: auto;
+    }
+  }
+  .unbindTip {
+    color: red;
+  }
+  .actionRow {
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    > div {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      height: 60px;
+      line-height: 60px;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      color: #222;
+      font-weight: 400;
+      transition: all .1s;
+      &:first-child {
+        border-right: 1px solid #eee;
+      }
+      &:active {
+        background: #e6733d;
+        color: #fff;
+      }
+    }
+  }
+  .policyRow {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+    font-size: .8rem;
+    text-decoration: underline;
+    color: #e6733d;
+  }
+}

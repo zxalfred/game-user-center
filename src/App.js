@@ -10,7 +10,7 @@ import Home from '@/pages/home'
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="app">
         <Router>
           <Route path="/home" component={Home}></Route>
         </Router>

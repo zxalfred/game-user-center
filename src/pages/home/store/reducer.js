@@ -3,11 +3,11 @@ import * as constants from './constants'
 
 const defaultState = fromJS({
   userInfo: {
-    accountId: '',
-    accountName: '',
-    isGuest: false,
-    channelId: '',
-    channelIcon: '',
+    account_id: '',
+    account_name: '',
+    is_guest: false,
+    channel_id: '',
+    channel_icon: '',
   },
 })
 
@@ -15,7 +15,7 @@ export default (state = defaultState, action) => {
   const { type } = action
   switch (type) {
     case constants.SET_USER_INFO: {
-      return state.set('userInfo', action.data)
+      return state.set('userInfo', fromJS(action.data))
     }
     default: return state
   }

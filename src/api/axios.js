@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { message } from 'antd'
 
 const config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
@@ -6,9 +7,9 @@ const config = {
   // withCredentials: true, // Check cross-site Access-Control
 }
 
-const _axios = axios.create(config)
+const axiosInstance = axios.create(config)
 
-_axios.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   (config) =>
     // Do something before request is sent
     config,
@@ -19,14 +20,19 @@ _axios.interceptors.request.use(
 )
 
 // Add a response interceptor
-_axios.interceptors.response.use(
-  (response) =>
-    // Do something with response data
-    response,
-  (error) =>
-    // Do something with response error
-    Promise.reject(error)
+axiosInstance.interceptors.response.use(
+  (response) => {
+    const res = response.data
+    if (res.code !== 200) {
+      const errMessage = res.message || String(res)
+      message.error(errMessage)
+    }
+    return res
+  },
+  (error) => {
+    throw new Error(error)
+  }
   ,
 )
 
-export default _axios
+export default axiosInstance

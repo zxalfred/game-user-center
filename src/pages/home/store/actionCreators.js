@@ -11,8 +11,8 @@ export const getUserInfo = () => async (dispatch) => {
     const result = await axios.get('/sdk/userInfo.json')
     const { data } = result
     dispatch(setUserInfo(data.data))
-    return data.data
+    return true
   } catch (err) {
-    return err
+    return false
   }
 }

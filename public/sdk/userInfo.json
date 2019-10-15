@@ -40,6 +40,7 @@
         "user_name": "",
         "is_bind": false
       }
-    ]
+    ],
+    "is_guest": true
   }
 }

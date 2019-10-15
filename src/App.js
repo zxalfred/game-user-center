@@ -1,21 +1,23 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router, Route, Link, Switch,
 } from 'react-router-dom'
-import store from '@/store'
+import { Spin } from 'antd'
+import { useSelector } from 'react-redux'
 
 import Home from '@/pages/home'
 
 function App() {
+  const loading = useSelector((state) => state.getIn(['global', 'loading']))
+
   return (
-    <Provider store={store}>
+    <Spin spinning={loading}>
       <div className="app">
         <Router>
           <Route path="/home" component={Home}></Route>
         </Router>
       </div>
-    </Provider>
+    </Spin>
   )
 }
 

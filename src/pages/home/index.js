@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './style.module.scss'
 import IconFont from '@/components/IconFont'
 import logo from '@/statics/img/logo-en.svg'
 import useUserInfo from './hooks/useUserInfo'
-
 
 function Home() {
   const userInfo = useUserInfo()
@@ -33,18 +33,18 @@ function Home() {
         )
       }
       <div className={styles.actionRow}>
-        <div>
+        <Link to="/switch">
           <span>Switch Account</span>
           <div>
             <IconFont type="switch" />
           </div>
-        </div>
-        <div>
+        </Link>
+        <Link to="/bind">
           <span>Bind Account</span>
           <div>
             <IconFont type="bind" />
           </div>
-        </div>
+        </Link>
       </div>
       <div className={styles.policyRow}>
         <div>Feedback</div>
@@ -55,4 +55,4 @@ function Home() {
   )
 }
 
-export default Home
+export default memo(Home)

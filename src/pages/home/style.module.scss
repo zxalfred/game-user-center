@@ -37,7 +37,7 @@ main {
     margin-top: 20px;
     display: flex;
     flex: 1;
-    > div {
+    :global(a) {
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
       height: 60px;

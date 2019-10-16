@@ -1,0 +1,61 @@
+.Tip {
+  text-align: center;
+  color: #666;
+  margin: 0;
+}
+.ItemWrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  border-top: 1px solid #eee;
+  .Item {
+    width:  50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    padding: 0 16px;
+    &:active {
+      background: #afafaf;
+      color: #fff;
+    }
+    .LeftWrap {
+      display: flex;
+      align-items: center;
+      .NameCol {
+        margin-left: 12px;
+        .UserName {
+          font-size: 14px;
+          color: #888;
+          margin-top: 4px;
+        }
+      }
+    }
+    &:nth-child(2n-1) {
+      border-right: 1px solid #eee;
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+    .SvgWrap {
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .BindStatus {
+      font-size: .8rem;
+      float: right;
+      &:not(.Bound)::after {
+        content: '>';
+      }
+      &.Bound {
+        color: #aaa;
+      }
+    }
+  }
+}

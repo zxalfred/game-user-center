@@ -7,6 +7,7 @@ const defaultState = fromJS({
     account_name: '',
     is_guest: false,
     channel_id: '',
+    channels: [],
     channel_icon: '',
   },
 })

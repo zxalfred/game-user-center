@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useISelector } from '@/utils/hooks'
 import { actionCreators } from '../store'
 import { setLoading } from '@/store/actionCreators'
 
 export default function useUserInfo() {
-  const userInfo = (useSelector((state) => state.getIn(['home', 'userInfo']))).toJS()
+  const userInfo = (useISelector((state) => state.getIn(['home', 'userInfo']))).toJS()
   const dispatch = useDispatch()
 
   useEffect(() => {

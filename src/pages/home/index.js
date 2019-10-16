@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import styles from './style.module.scss'
 import IconFont from '@/components/IconFont'
 import logo from '@/statics/img/logo-en.svg'
@@ -7,6 +7,14 @@ import useUserInfo from './hooks/useUserInfo'
 
 function Home() {
   const userInfo = useUserInfo()
+  const history = useHistory()
+
+  const handleClickProtocol = (e) => {
+    const { type } = e.target.dataset
+    if (type) {
+      history.push(`/protocol?type=${type}`)
+    }
+  }
 
   return (
     <main>
@@ -46,10 +54,10 @@ function Home() {
           </div>
         </Link>
       </div>
-      <div className={styles.policyRow}>
-        <div>Feedback</div>
-        <div>Agreement</div>
-        <div>Private Policy</div>
+      <div className={styles.policyRow} onClick={handleClickProtocol}>
+        <div data-type="3">Feedback</div>
+        <div data-type="2">Agreement</div>
+        <div data-type="1">Private Policy</div>
       </div>
     </main>
   )

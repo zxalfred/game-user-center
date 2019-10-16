@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 import Home from '@/pages/home'
 import Bind from '@/pages/bind'
 import SwitchPage from '@/pages/switch'
+import Protocol from '@/pages/protocol'
 
 function App() {
   const loading = useSelector((state) => state.getIn(['global', 'loading']))
@@ -19,7 +20,7 @@ function App() {
           <Route path="/home" component={Home} />
           <Route path="/bind" component={Bind} />
           <Route path="/switch" component={SwitchPage} />
-          <Redirect path="*" to="/home" />
+          <Route path="/protocol" component={Protocol} />
         </Router>
       </div>
     </Spin>

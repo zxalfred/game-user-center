@@ -1,6 +1,6 @@
 export default {
-  getUserInfo: '/sdk/user/info',
-  getProtocol: '/sdk/protocol/detail',
+  getUserInfo: '/sdk/userInfo.json',
+  getProtocol: '/sdk/protocolData.json',
   sendEmail: '/sdk/send-code',
   resetPwd: '/sdk/reset-pwd',
 }

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/api'
 import * as constants from './constants'
 
 const setUserInfo = (data) => ({
@@ -8,9 +8,9 @@ const setUserInfo = (data) => ({
 
 export const getUserInfo = () => async (dispatch) => {
   try {
-    const result = await axios.get('/sdk/userInfo.json')
-    const { data } = result
-    dispatch(setUserInfo(data.data))
+    const url = api.API.getUserInfo
+    const result = await api.get(url)
+    dispatch(setUserInfo(result.data))
     return true
   } catch (err) {
     return false

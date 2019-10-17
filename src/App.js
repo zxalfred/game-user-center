@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router, Route,
 } from 'react-router-dom'
 import { Spin } from 'antd'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { actionCreators } from '@/pages/home/store'
+import { setLoading } from '@/store/actionCreators'
 
 import Home from '@/pages/home'
 import Bind from '@/pages/bind'
@@ -13,15 +14,15 @@ import Protocol from '@/pages/protocol'
 import Login from '@/pages/login'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const loading = useSelector((state) => state.getIn(['global', 'loading']))
   const dispatch = useDispatch()
 
   useEffect(() => {
     const getUserInfo = async () => {
       const action = actionCreators.getUserInfo()
-      setLoading(true)
+      dispatch(setLoading(true))
       await dispatch(action)
-      setLoading(false)
+      dispatch(setLoading(false))
     }
     getUserInfo()
   }, [])

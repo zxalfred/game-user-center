@@ -1,8 +1,20 @@
 import React, { memo } from 'react'
+import { useHistory } from 'react-router-dom'
 import useChannelList from './hooks/useChannelList'
 import styles from '@/statics/styles/account.module.scss'
 
 function ChannelList({ channelList }) {
+  const history = useHistory()
+
+  function handleClickItem(id) {
+    if (id === 5) {
+      history.push({
+        pathname: '/login',
+        search: '?action=switch',
+      })
+    }
+  }
+
   return (
     <div className={styles.ItemWrap}>
       {
@@ -11,6 +23,7 @@ function ChannelList({ channelList }) {
           <div
             className={styles.Item}
             key={item.channel_id}
+            onClick={handleClickItem.bind(this, item.channel_id)}
           >
             <div className={styles.LeftWrap}>
               <div className={styles.SvgWrap}>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Spin } from 'antd'
-import AppRouter from './AppRouter';
 import { useDispatch, useSelector } from 'react-redux'
+import AppRouter from './AppRouter'
 import { actionCreators } from '@/pages/home/store'
 import { setLoading } from '@/store/actionCreators'
 

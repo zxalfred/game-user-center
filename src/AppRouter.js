@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo } from 'react'
 import {
   BrowserRouter as Router, Route,
 } from 'react-router-dom'
@@ -17,4 +17,4 @@ export default memo(() => (
     <Route path="/protocol" component={Protocol} />
     <Route path="/login" component={Login} />
   </Router>
-));
+))

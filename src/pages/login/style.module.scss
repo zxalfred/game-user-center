@@ -1,0 +1,23 @@
+.MainWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .TitleRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e46c1d;
+    font-weight: bold;
+    font-size: 24px;
+    .LogoWrap {
+      font-size: 50px;
+      display: block;
+      margin-right: 30px;
+    }
+  }
+  :global(.ant-form) {
+    margin-top: 6%;
+    width: 100%;
+    max-width: 600px;
+  }
+}

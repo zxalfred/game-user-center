@@ -142,10 +142,13 @@
       "react-app"
     ],
     "plugins": [
-      ["import", {
-        "libraryName": "antd",
-        "libraryDirectory": "es"
-      }],
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es"
+        }
+      ],
       "@babel/plugin-proposal-export-default-from",
       "@babel/plugin-proposal-export-namespace-from"
     ]
@@ -156,6 +159,8 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-alias": "^1.1.2",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "node-sass": "^4.12.0"
   }
 }

@@ -144,8 +144,7 @@
     "plugins": [
       ["import", {
         "libraryName": "antd",
-        "libraryDirectory": "es",
-        "style": "css"
+        "libraryDirectory": "es"
       }],
       "@babel/plugin-proposal-export-default-from",
       "@babel/plugin-proposal-export-namespace-from"

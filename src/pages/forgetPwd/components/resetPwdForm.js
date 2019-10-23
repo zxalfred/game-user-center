@@ -11,6 +11,9 @@ import styles from './style.module.scss'
 class ResetPwdForm extends Component {
   state = {
     confirmDirty: false,
+    sending: false,
+    waiting: false, // 发完邮件60s等待后才能再次发送
+    waitTime: 60,
   }
 
   formItemLayout = {
@@ -72,13 +75,57 @@ class ResetPwdForm extends Component {
     callback()
   }
 
+  handleSendEmail = () => {
+    const {
+      waiting,
+    } = this.state
+    const {
+      form: {
+        validateFields,
+      },
+    } = this.props
+    if (!waiting) {
+      validateFields(['email'], (errs) => {
+        if (!errs) {
+          this.setState({
+            sending: true,
+          })
+          this.setState({
+            sending: false,
+            waiting: true,
+            waitTime: 60,
+          })
+          if (this.timer) {
+            clearInterval(this.timer)
+          }
+          this.timer = setInterval(() => {
+            this.setState((state) => ({
+              waitTime: state.waitTime - 1,
+            }))
+            const { waitTime } = this.state
+            if (waitTime <= 0) {
+              this.setState({
+                waiting: false,
+              })
+              clearInterval(this.timer)
+            }
+          }, 1000)
+        }
+      })
+    }
+  }
+
   render() {
     const {
       form: {
         getFieldDecorator,
       },
     } = this.props
-
+    const {
+      sending,
+      waiting,
+      waitTime,
+    } = this.state
 
     return (
       <Form
@@ -115,8 +162,17 @@ class ResetPwdForm extends Component {
               })(<Input />)}
             </Col>
             <Col span={6}>
-              <Button className={styles.CusButton}>
-                Send Email
+              <Button
+                className={styles.CusButton}
+                onClick={this.handleSendEmail}
+                loading={sending}
+                disabled={waiting}
+              >
+                {
+                  waiting
+                    ? `Sent (${waitTime})s`
+                    : 'Send Email'
+                }
               </Button>
             </Col>
           </Row>
@@ -159,6 +215,7 @@ class ResetPwdForm extends Component {
               <Button
                 className={styles.CusButton}
                 size="large"
+                htmlType="submit"
               >
                 Submit
               </Button>

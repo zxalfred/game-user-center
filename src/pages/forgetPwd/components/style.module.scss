@@ -1,0 +1,10 @@
+.CusButton {
+  background: #e46c1d;
+  color: #fff;
+  width: 100%;
+  &:focus {
+    color: #fff;
+    background-color: #e46c1d;
+    border-color: #e46c1d;
+  }
+}

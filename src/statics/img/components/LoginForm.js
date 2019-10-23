@@ -83,7 +83,7 @@ class LoginForm extends Component {
           >
             Login/Register
           </Button>
-          <Link className={styles.FoundPwdLink} to="/home">Forget Password?</Link>
+          <Link className={styles.FoundPwdLink} to="/forget-pwd">Forget Password?</Link>
         </Form.Item>
       </Form>
     )

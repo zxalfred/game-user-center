@@ -1,20 +1,21 @@
 import React from 'react'
-import LoginForm from './components/LoginForm'
 import IconFont from '@/components/IconFont'
+import ResetPwdForm from './components/resetPwdForm'
 import styles from '@/statics/styles/form.module.scss'
 
-function Login() {
+
+function ResetPwd() {
   return (
     <main className={styles.MainWrap}>
       <div className={styles.TitleRow}>
         <div className={styles.LogoWrap}>
           <IconFont type="huanle" />
         </div>
-        Joy You login
+        Reset Password
       </div>
-      <LoginForm />
+      <ResetPwdForm />
     </main>
   )
 }
 
-export default Login
+export default ResetPwd

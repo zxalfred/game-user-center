@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
   Redirect,
 } from 'react-router-dom'
 
@@ -14,12 +15,14 @@ import ForgetPwd from '@/pages/forgetPwd'
 
 export default memo(() => (
   <Router>
-    <Route path="/home" component={Home} />
-    <Route path="/bind" component={Bind} />
-    <Route path="/switch" component={SwitchPage} />
-    <Route path="/protocol" component={Protocol} />
-    <Route path="/login" component={Login} />
-    <Route path="/forget-pwd" component={ForgetPwd} />
-
+    <Switch>
+      <Route path="/home" component={Home} />
+      <Route path="/bind" component={Bind} />
+      <Route path="/switch" component={SwitchPage} />
+      <Route path="/protocol" component={Protocol} />
+      <Route path="/login" component={Login} />
+      <Route path="/forget-pwd" component={ForgetPwd} />
+      <Redirect from="*" to="/home" />
+    </Switch>
   </Router>
 ))
